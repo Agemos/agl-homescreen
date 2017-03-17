@@ -25,7 +25,7 @@ module.exports = {
   },
   deploy: {
     target_ip: '127.0.0.1',
-    port: '8000',
+    port: '4444',
     dir: 'agl-homescreen'
   },
   inlineTemplate: {
