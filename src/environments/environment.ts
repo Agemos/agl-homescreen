@@ -8,11 +8,19 @@
  **************************************************************************/
 
 export const environment: any = {
-  production: true,
+    production: true,
+    debug: true,
 
-  service: {
-    api: 'ws://localhost:5000',
-    aglIdentity: 'ws://localhost:5000',
-    afmMain: 'ws://localhost:5000'
-  }
+    service: {
+        aglIdentityPort: '1212',
+        afmMainPort: '5000',
+        ip: '172.17.1.57',
+        api_url: '/api'
+    },
+    session: {
+        initial: ' ',
+        timeout: 60,
+        pingrate: 0
+    },
+    maxConnectionRetry: 10,
 };

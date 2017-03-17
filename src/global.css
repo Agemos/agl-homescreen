@@ -83,6 +83,7 @@ main.page-content {
   background-size: 90px 90px;
   border-radius: 50%;
   position: relative;
+  background-image: url('./assets/img/default-profile-pic.png');    /*default icon*/
 }
 
 .app-launcher.is-pressed::after {
@@ -110,7 +111,7 @@ main.page-content {
 .app-launcher.radio {
   background-image: url('./assets/svg/radio-circle.svg');
 }
-.app-launcher.multimedia {
+.app-launcher.multimedia, .app-launcher.mediaplayer {
   background-image: url('./assets/svg/multimedia-circle.svg');
 }
 .app-launcher.connectivity {
@@ -122,7 +123,7 @@ main.page-content {
 .app-launcher.settings {
   background-image: url('./assets/svg/settings-circle.svg');
 }
-.app-launcher.point {
+.app-launcher.poi {
   background-image: url('./assets/svg/point-circle.svg');
 }
 

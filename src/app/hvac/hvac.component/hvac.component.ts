@@ -22,17 +22,17 @@ export class HvacComponent implements OnInit, OnDestroy, WebSocketHandler {
 
   //@todo Add listeners to listen api-methods and implement your logic here
   ngOnInit() {
-    this.socket = new WebSocket(this.url);
-    this.socket.onopen = this.onWSOpen.bind(this);
-    this.socket.onclose = this.onWSClose.bind(this);
-    this.socket.onmessage = this.onWSMessageReceive.bind(this);
+    // this.socket = new WebSocket(this.url);
+    // this.socket.onopen = this.onWSOpen.bind(this);
+    // this.socket.onclose = this.onWSClose.bind(this);
+    // this.socket.onmessage = this.onWSMessageReceive.bind(this);
   }
 
   ngOnDestroy(){
-    this.socket.send(JSON.stringify({
-      api: 'hvac/off'
-    }));
-    this.socket.close();
+    // this.socket.send(JSON.stringify({
+    //   api: 'hvac/off'
+    // }));
+    // this.socket.close();
   }
 
   onWSOpen(): void {

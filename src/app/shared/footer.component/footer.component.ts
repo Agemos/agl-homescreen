@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {AglIdentityService} from "../aglIdentity.service";
+import {AglIdentityService} from "../binders/agl-binder/aglIdentity.service";
 
 @Component({
   selector: 'app-footer',

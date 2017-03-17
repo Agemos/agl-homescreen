@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from "@angular/core";
 import {TranslateService} from "ng2-translate";
-import {AglIdentityService} from "./shared/aglIdentity.service";
+import {AglIdentityService} from "./shared/binders/agl-binder/aglIdentity.service";
 
 @Component({
   selector: 'app',

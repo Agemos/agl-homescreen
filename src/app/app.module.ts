@@ -22,53 +22,60 @@ import {SettingsDatetimeComponent} from "./settings/settings-datetime/settings-d
 import {PopUpComponent} from "./shared/pop-up.component/pop-up.component";
 import {EventEmitterComponent} from "./event-emitter/event-emitter.component/event-emitter.component";
 import {UserBarComponent} from "./shared/user-bar.component/user-bar.component";
-import {WebSocketService} from "./shared/websocket.service";
-import {AglIdentityService} from "./shared/aglIdentity.service";
-import {AfmMainService} from "./shared/afmMain.service";
+import {HttpClient} from "./common/httpclient";
+import {WebSocketService} from "./shared/binders/websocket.service";
+import {AfmMainService} from "./shared/binders/afm-binder/afmMain.service";
+import {AfmContextService} from "./shared/binders/afm-binder/afmContext.service";
+import {AglIdentityService} from "./shared/binders/agl-binder/aglIdentity.service";
+import {AglContextService} from "./shared/binders/agl-binder/aglContext.service";
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    appRoutes,
-    TranslateModule.forRoot({
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        appRoutes,
+        TranslateModule.forRoot({
             provide: TranslateLoader,
             useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
             deps: [Http]
-        })
-  ],
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    PopUpComponent,
-    MenubarComponent,
-    InfobarComponent,
-    AppLauncherComponent,
-    MultimediaComponent,
-    HvacComponent,
-    NavigationComponent,
-    ConnectivityComponent,
-    HomeComponent,
-    SettingsHomeComponent,
-    SettingsBluetoothComponent,
-    SettingsWifiComponent,
-    SettingsDatetimeComponent,
-    EventEmitterComponent,
-    UserBarComponent
-  ],
-  providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
-    appRouteProviders,
-    AuthGuard,
-    AuthService,
-    WebSocketService,
-    AglIdentityService,
-    AfmMainService
-  ],
-  bootstrap: [AppComponent]
+        }),
+    ],
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        PopUpComponent,
+        MenubarComponent,
+        InfobarComponent,
+        AppLauncherComponent,
+        MultimediaComponent,
+        HvacComponent,
+        NavigationComponent,
+        ConnectivityComponent,
+        HomeComponent,
+        SettingsHomeComponent,
+        SettingsBluetoothComponent,
+        SettingsWifiComponent,
+        SettingsDatetimeComponent,
+        EventEmitterComponent,
+        UserBarComponent
+    ],
+    providers: [
+        {provide: LocationStrategy, useClass: HashLocationStrategy},
+        appRouteProviders,
+        AuthGuard,
+        AuthService,
+        HttpClient,
+        WebSocketService,
+        AfmMainService,
+        AfmContextService,
+        AglIdentityService,
+        AglContextService,
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {}
+    constructor() {
+    }
 }
